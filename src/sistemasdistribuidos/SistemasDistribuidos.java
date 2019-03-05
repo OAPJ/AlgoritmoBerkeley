@@ -18,11 +18,11 @@ public class SistemasDistribuidos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrameReloj reloj1= new JFrameReloj(0);
+        JFrameReloj reloj1= new JFrameReloj();
         reloj1.setVisible(true);
-        JFrameReloj reloj2= new JFrameReloj(0);
+        JFrameReloj reloj2= new JFrameReloj();
         reloj2.setVisible(true);
-        JFrameReloj reloj3= new JFrameReloj(0);
+        JFrameReloj reloj3= new JFrameReloj();
         reloj3.setVisible(true);
     }
     

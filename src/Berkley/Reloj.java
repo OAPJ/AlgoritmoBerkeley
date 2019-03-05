@@ -14,9 +14,10 @@ import javax.swing.JOptionPane;
  */
 public class Reloj extends JFrameReloj {
     private ArrayList<JFrameReloj> esclavos;
+    private ArrayList<Integer> diferencias;
     private int umbral;
     Reloj(){
-       super(1);
+       super();
        super.setVisible(true);
        super.agregarManager.setVisible(true);
        super.umbralManager.setVisible(true);
@@ -25,6 +26,7 @@ public class Reloj extends JFrameReloj {
        super.sincronizarManager.setVisible(true);
        super.setSize(480, 480);
        esclavos=new ArrayList<>();
+       diferencias = new ArrayList<>();
        super.agregarManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarActionPerformed(evt);
@@ -42,16 +44,23 @@ public class Reloj extends JFrameReloj {
        Reloj clock = new Reloj();
    }
    public void agregarActionPerformed(java.awt.event.ActionEvent evt){
-       JFrameReloj aux= new JFrameReloj(0);
+       JFrameReloj aux= new JFrameReloj();
        aux.setVisible(true);
        esclavos.add(aux);
    }
    public void sincronizarActionPerformed(java.awt.event.ActionEvent evt){
        try{
+           int aux = 0;
            this.umbral= (int)Double.parseDouble(super.umbralManager.getText());
+           aux += Integer.parseInt(super.getHour().getText())*60*60;
+           aux += Integer.parseInt(super.getMinute().getText())*60;
+           aux += Integer.parseInt(super.getSecond().getText());
            super.adelantar(2000);
            for(JFrameReloj c: esclavos){
-               
+               aux = 0;
+               aux += Integer.parseInt(c.getHour().getText())*60*60;
+               aux += Integer.parseInt(c.getMinute().getText())*60;
+               aux += Integer.parseInt(c.getSecond().getText());
                c.adelantar(2000);
            }
        }catch(NumberFormatException r){

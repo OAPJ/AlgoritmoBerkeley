@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class JFrameReloj extends javax.swing.JFrame implements Runnable {
@@ -21,7 +22,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
     private Calendar calendario;
     private Date fecha;
     Thread hilo;
-    public JFrameReloj(int a) {
+    public JFrameReloj() {
         initComponents();
         f=true;
         this.agregarManager.setVisible(false);
@@ -170,7 +171,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(minutoText)
                                     .addComponent(horaText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(hour, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,10 +202,10 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(minute)
-                        .addComponent(hour)
                         .addComponent(time2)
                         .addComponent(time4)
-                        .addComponent(second))
+                        .addComponent(second)
+                        .addComponent(hour))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -304,7 +305,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameReloj(0).setVisible(true);
+                new JFrameReloj().setVisible(true);
                 
             }
         });
@@ -376,6 +377,30 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
                 }
             }
         }
+    }
+//
+    public JLabel getHour() {
+        return hour;
+    }
+
+    public void setHour(JLabel hour) {
+        this.hour = hour;
+    }
+
+    public JLabel getMinute() {
+        return minute;
+    }
+
+    public void setMinute(JLabel minute) {
+        this.minute = minute;
+    }
+
+    public JLabel getSecond() {
+        return second;
+    }
+
+    public void setSecond(JLabel second) {
+        this.second = second;
     }
 
     void setAgregarVisible() {
