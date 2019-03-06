@@ -59,6 +59,7 @@ public class Reloj extends JFrameReloj {
    
    public void sincronizarActionPerformed(java.awt.event.ActionEvent evt){
        try{
+           horas = new ArrayList<>();
            int aux = 0;
            this.umbral= (int)Double.parseDouble(super.umbralManager.getText());
            aux += Integer.parseInt(super.getHour().getText())*60*60;
@@ -84,13 +85,14 @@ public class Reloj extends JFrameReloj {
    
    public void calcularPromedio(){
        int cont=1, promedio=0;
+       diferencias = new ArrayList<>();
        super.getjTextArea1().setText("Diferencias");
        for(int i=0; i<horas.size(); i++){
            diferencias.add(horas.get(i)-horaSegundos);
-           super.getjTextArea1().setText(super.getjTextArea1().getText()+"\nReloj "+(i+1)+" => "+diferencias.get(i));
+           super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n"+esclavos.get(i).getjLabel4().getText()+" => "+diferencias.get(i));
        }
        for(int i=0; i<diferencias.size(); i++){
-           if(diferencias.get(i) < umbral){
+           if(diferencias.get(i) < umbral && diferencias.get(i) > (-1*umbral)){
                cont++;
                promedio += diferencias.get(i);
            }

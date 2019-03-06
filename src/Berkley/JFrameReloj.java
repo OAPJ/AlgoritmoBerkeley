@@ -118,6 +118,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Algoritmo Berkeley");
 
         jLabel1.setText("Hora");
 
@@ -176,10 +177,12 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(horaReal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(start, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(115, 115, 115)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(horaReal)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(97, 97, 97)
                         .addComponent(sincronizarManager)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -226,12 +229,21 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4)
+                        .addGap(67, 67, 67)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sincronizarManager)
+                            .addComponent(start)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(agregarManager)
                             .addComponent(umbralManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mensajeManager))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(minute)
@@ -251,17 +263,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
                                     .addComponent(segundosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(94, 94, 94))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4)
-                        .addGap(67, 67, 67)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(start)
-                    .addComponent(sincronizarManager))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(112, 112, 112)))
                 .addComponent(horaReal)
                 .addGap(18, 18, 18))
         );
@@ -270,30 +272,31 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        try{
-            this.hora= Integer.parseInt(this.horaText.getText());
-            this.minuto= Integer.parseInt(this.minutoText.getText());
-            this.segundo= Integer.parseInt(this.segundosText.getText());
-            if(validarHora()&&validarMinuto()&&validarSegundo()){
-                if(hora<10)
-                    this.hour.setText("0"+this.hora);
-                else
-                    this.hour.setText(this.hora+"");
-                if(minuto<10)
-                    this.minute.setText("0"+this.minuto);
-                else
-                    this.minute.setText(this.minuto+"");
-                if(segundo<10)
-                    this.second.setText("0"+this.segundo);
-                else
-                    this.second.setText(this.segundo+"");
-                this.hilo.start();
-            }else{
-                JOptionPane.showMessageDialog(null, "Datos incorrectas");
-            }
-        }catch(NumberFormatException e){
-            
-        }
+      try{
+      this.hora= Integer.parseInt(this.horaText.getText());
+      this.minuto= Integer.parseInt(this.minutoText.getText());
+      this.segundo= Integer.parseInt(this.segundosText.getText());
+      if(validarHora()&&validarMinuto()&&validarSegundo()){
+          if(hora<10)
+              this.hour.setText("0"+this.hora);
+          else
+              this.hour.setText(this.hora+"");
+          if(minuto<10)
+              this.minute.setText("0"+this.minuto);
+          else
+              this.minute.setText(this.minuto+"");
+          if(segundo<10)
+              this.second.setText("0"+this.segundo);
+          else
+              this.second.setText(this.segundo+"");
+          if(!hilo.isAlive())
+              this.hilo.start();
+      }
+      else
+          JOptionPane.showMessageDialog(null, "Datos incorrectas","Algoritmo Berkeley",JOptionPane.ERROR_MESSAGE);
+      }catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(null, "Faltan los datos","Algoritmo Berkeley",JOptionPane.ERROR_MESSAGE);
+      }
     }//GEN-LAST:event_startActionPerformed
 
     private void horaRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horaRealActionPerformed
@@ -314,7 +317,8 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
            this.second.setText("0"+this.segundo);
         else
            this.second.setText(this.segundo+"");
-        this.hilo.start();
+        if(!hilo.isAlive())
+            this.hilo.start();
     }//GEN-LAST:event_horaRealActionPerformed
 
     public static void main(String args[]) {
@@ -359,7 +363,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     public javax.swing.JLabel mensajeManager;
     private javax.swing.JLabel minute;
@@ -454,6 +458,10 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
 
     public void setjTextArea1(JTextArea jTextArea1) {
         this.jTextArea1 = jTextArea1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
     }
 
     public int getHora() {
