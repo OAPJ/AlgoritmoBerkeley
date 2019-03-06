@@ -86,7 +86,7 @@ public class Reloj extends JFrameReloj {
    public void calcularPromedio(){
        int cont=1, promedio=0;
        diferencias = new ArrayList<>();
-       super.getjTextArea1().setText("Diferencias");
+       super.getjTextArea1().setText("Diferencias con el Servidor");
        for(int i=0; i<horas.size(); i++){
            diferencias.add(horas.get(i)-horaSegundos);
            super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n"+esclavos.get(i).getjLabel4().getText()+" => "+diferencias.get(i));
@@ -98,20 +98,27 @@ public class Reloj extends JFrameReloj {
            }
        }
        promedio = promedio/cont;
-       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n\nPromedio  => "+promedio);
+       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n\nPromedio  => "+promedio+"\n\nDiferencias");
        int horafinal = horaSegundos + promedio;
+       int auxHF = horafinal;
        int h = horafinal /3600;
        int m = (horafinal - h*3600) / 60;
        int s = horafinal - h*3600 - m*60;
-       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n\nNueva hora  => "+h+":"+m+":"+s);
-       
+       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\nServidor  => "+h+":"+m+":"+s);
        super.setHora(h);
        super.setMinuto(m);
        super.setSegundo(s);
+       int i=0;
        for(JFrameReloj c: esclavos){
+           horafinal = horas.get(i) + (auxHF-horas.get(i));
+           h = horafinal /3600;
+           m = (horafinal - h*3600) / 60;
+           s = horafinal - h*3600 - m*60;
+           super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n"+c.getjLabel4().getText().toString()+"=> "+h+":"+m+":"+s);
            c.setHora(h);
            c.setMinuto(m);
            c.setSegundo(s);
+           i++;
        }
    }
 }
