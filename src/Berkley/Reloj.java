@@ -15,7 +15,11 @@ import javax.swing.JOptionPane;
 public class Reloj extends JFrameReloj {
     private ArrayList<JFrameReloj> esclavos;
     private ArrayList<Integer> diferencias;
+    private ArrayList<Integer> horas;
+    private int horaSegundos;
     private int umbral;
+    private int escl;
+    
     Reloj(){
        super();
        super.setVisible(true);
@@ -24,9 +28,12 @@ public class Reloj extends JFrameReloj {
        super.mensajeManager.setVisible(true);
        super.setLocationRelativeTo(null);
        super.sincronizarManager.setVisible(true);
-       super.setSize(480, 480);
+       super.setSize(680, 480);
        esclavos=new ArrayList<>();
        diferencias = new ArrayList<>();
+       horas = new ArrayList<>();
+       horaSegundos = 0;
+       escl = 0;
        super.agregarManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarActionPerformed(evt);
@@ -39,15 +46,17 @@ public class Reloj extends JFrameReloj {
         });
     }
                                 
-   
    public static void main(String arc[]){
        Reloj clock = new Reloj();
    }
+   
    public void agregarActionPerformed(java.awt.event.ActionEvent evt){
-       JFrameReloj aux= new JFrameReloj();
+       escl++;
+       JFrameReloj aux= new JFrameReloj("Reloj "+Integer.toString(escl));
        aux.setVisible(true);
        esclavos.add(aux);
    }
+   
    public void sincronizarActionPerformed(java.awt.event.ActionEvent evt){
        try{
            int aux = 0;
@@ -55,17 +64,52 @@ public class Reloj extends JFrameReloj {
            aux += Integer.parseInt(super.getHour().getText())*60*60;
            aux += Integer.parseInt(super.getMinute().getText())*60;
            aux += Integer.parseInt(super.getSecond().getText());
+           horaSegundos = aux;
            super.adelantar(2000);
            for(JFrameReloj c: esclavos){
                aux = 0;
                aux += Integer.parseInt(c.getHour().getText())*60*60;
                aux += Integer.parseInt(c.getMinute().getText())*60;
                aux += Integer.parseInt(c.getSecond().getText());
+               horas.add(aux);
                c.adelantar(2000);
            }
+           calcularPromedio();
+           
        }catch(NumberFormatException r){
            System.out.println(super.umbralManager.getText());
            JOptionPane.showMessageDialog(null, "Inserte un umbral válido");
+       }
+   }
+   
+   public void calcularPromedio(){
+       int cont=1, promedio=0;
+       super.getjTextArea1().setText("Diferencias");
+       for(int i=0; i<horas.size(); i++){
+           diferencias.add(horas.get(i)-horaSegundos);
+           super.getjTextArea1().setText(super.getjTextArea1().getText()+"\nReloj "+(i+1)+" => "+diferencias.get(i));
+       }
+       for(int i=0; i<diferencias.size(); i++){
+           if(diferencias.get(i) < umbral){
+               cont++;
+               promedio += diferencias.get(i);
+           }
+       }
+       promedio = promedio/cont;
+       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n\nPromedio  => "+promedio);
+       int horafinal = horaSegundos + promedio;
+       int h = horafinal /3600;
+       int m = (horafinal - h*3600) / 60;
+       int s = horafinal - h*3600 - m*60;
+       super.getjTextArea1().setText(super.getjTextArea1().getText()+"\n\nNueva hora  => "+h+":"+m+":"+s);
+       
+       super.setHora(h);
+       super.setMinuto(m);
+       super.setSegundo(s);
+       for(JFrameReloj c: esclavos){
+           c.setHora(h);
+           c.setMinuto(m);
+           c.setSegundo(s);
        }
    }
 }
