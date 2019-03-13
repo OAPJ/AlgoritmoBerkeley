@@ -26,9 +26,10 @@ public class Reloj extends JFrameReloj {
        super.agregarManager.setVisible(true);
        super.umbralManager.setVisible(true);
        super.mensajeManager.setVisible(true);
-       super.setLocationRelativeTo(null);
        super.sincronizarManager.setVisible(true);
-       super.setSize(680, 480);
+       super.jScrollPane1.setVisible(true);
+       super.setLocationRelativeTo(null);
+       super.setSize(837, 480);
        esclavos=new ArrayList<>();
        diferencias = new ArrayList<>();
        horas = new ArrayList<>();

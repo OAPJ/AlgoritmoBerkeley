@@ -32,7 +32,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
         this.sincronizarManager.setVisible(false);
         hilo= new Thread(this);
         this.calendario= new GregorianCalendar();
-        this.setSize(400, 400);
+        this.setSize(810, 470);
         jLabel4.setText("Servidor");
     }
     
@@ -43,9 +43,10 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
         this.umbralManager.setVisible(false);
         this.mensajeManager.setVisible(false);
         this.sincronizarManager.setVisible(false);
+        this.jScrollPane1.setVisible(false);
         hilo= new Thread(this);
         this.calendario= new GregorianCalendar();
-        this.setSize(400, 400);
+        this.setSize(837, 480);
         jLabel4.setText(n);
     }
     
@@ -96,176 +97,194 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        horaText = new javax.swing.JTextField();
-        minutoText = new javax.swing.JTextField();
-        segundosText = new javax.swing.JTextField();
-        start = new javax.swing.JButton();
-        minute = new javax.swing.JLabel();
-        hour = new javax.swing.JLabel();
-        time2 = new javax.swing.JLabel();
-        second = new javax.swing.JLabel();
-        time4 = new javax.swing.JLabel();
-        horaReal = new javax.swing.JButton();
-        agregarManager = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
         umbralManager = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         mensajeManager = new javax.swing.JLabel();
-        sincronizarManager = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
+        horaText = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        minutoText = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        segundosText = new javax.swing.JTextField();
+        agregarManager = new javax.swing.JToggleButton();
+        start = new javax.swing.JButton();
+        horaReal = new javax.swing.JButton();
+        sincronizarManager = new javax.swing.JToggleButton();
+        jPanel2 = new javax.swing.JPanel();
+        second = new javax.swing.JLabel();
+        hour = new javax.swing.JLabel();
+        time2 = new javax.swing.JLabel();
+        minute = new javax.swing.JLabel();
+        time4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Algoritmo Berkeley");
 
+        jPanel1.setLayout(null);
+
+        umbralManager.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.add(umbralManager);
+        umbralManager.setBounds(250, 340, 67, 20);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel4.setText("Servidor");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 10, 160, 40);
+
+        mensajeManager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        mensajeManager.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeManager.setText("Umbral(segundos).");
+        jPanel1.add(mensajeManager);
+        mensajeManager.setBounds(100, 340, 160, 17);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("Hora");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(30, 290, 40, 20);
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 204));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(540, 20, 210, 170);
+
+        horaText.setBackground(new java.awt.Color(255, 153, 153));
+        horaText.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jPanel1.add(horaText);
+        horaText.setBounds(80, 290, 70, 20);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
         jLabel2.setText("Minutos");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(160, 290, 70, 17);
 
+        minutoText.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.add(minutoText);
+        minutoText.setBounds(230, 290, 60, 20);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
         jLabel3.setText("Segundos");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(300, 290, 90, 17);
 
+        segundosText.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.add(segundosText);
+        segundosText.setBounds(370, 290, 58, 20);
+
+        agregarManager.setBackground(new java.awt.Color(255, 255, 204));
+        agregarManager.setText("Agregar reloj");
+        jPanel1.add(agregarManager);
+        agregarManager.setBounds(600, 270, 150, 80);
+
+        start.setBackground(new java.awt.Color(255, 255, 204));
         start.setText("Comenzar");
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startActionPerformed(evt);
             }
         });
+        jPanel1.add(start);
+        start.setBounds(10, 370, 160, 50);
 
-        minute.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
-        minute.setText("00");
-
-        hour.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
-        hour.setText("00");
-
-        time2.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
-        time2.setText(":");
-
-        second.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
-        second.setText("00");
-
-        time4.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
-        time4.setText(":");
-
+        horaReal.setBackground(new java.awt.Color(255, 255, 204));
         horaReal.setText("Comenzar horaReal");
         horaReal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 horaRealActionPerformed(evt);
             }
         });
+        jPanel1.add(horaReal);
+        horaReal.setBounds(180, 370, 180, 50);
 
-        agregarManager.setText("Agregar reloj");
-
-        mensajeManager.setText("Umbral(segundos).");
-
+        sincronizarManager.setBackground(new java.awt.Color(255, 255, 204));
         sincronizarManager.setText("Comenzar sincronización");
+        jPanel1.add(sincronizarManager);
+        sincronizarManager.setBounds(530, 360, 210, 50);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Servidor");
+        second.setFont(new java.awt.Font("Trebuchet MS", 3, 48)); // NOI18N
+        second.setText("00");
+
+        hour.setFont(new java.awt.Font("Trebuchet MS", 3, 48)); // NOI18N
+        hour.setText("00");
+
+        time2.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
+        time2.setText(":");
+
+        minute.setFont(new java.awt.Font("Trebuchet MS", 3, 48)); // NOI18N
+        minute.setText("00");
+
+        time4.setFont(new java.awt.Font("Tempus Sans ITC", 2, 36)); // NOI18N
+        time4.setText(":");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(hour, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(time4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(minute, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(second, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(minute)
+                    .addComponent(second)
+                    .addComponent(hour)
+                    .addComponent(time4)
+                    .addComponent(time2))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(120, 50, 310, 90);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\ovall\\OneDrive\\Documents\\NeatBeans\\SistemasDistrubidos\\AlgoritmoBerkeley-master\\545fdf80960a97683a217c83-1024x576.png")); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(-10, 0, 820, 470);
+
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(0, 0, 810, 470);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(horaReal)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(97, 97, 97)
-                        .addComponent(sincronizarManager)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(umbralManager, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mensajeManager)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(agregarManager)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(segundosText))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(minutoText)
-                                    .addComponent(horaText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(26, 26, 26)
-                        .addComponent(hour, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(minute, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(time4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(second, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4)
-                        .addGap(67, 67, 67)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(sincronizarManager)
-                            .addComponent(start)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(agregarManager)
-                            .addComponent(umbralManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mensajeManager))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(minute)
-                                .addComponent(time2)
-                                .addComponent(time4)
-                                .addComponent(second)
-                                .addComponent(hour))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(horaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(minutoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(segundosText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(112, 112, 112)))
-                .addComponent(horaReal)
-                .addGap(18, 18, 18))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -344,6 +363,7 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
             java.util.logging.Logger.getLogger(JFrameReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -363,6 +383,10 @@ public class JFrameReloj extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     public javax.swing.JLabel mensajeManager;
