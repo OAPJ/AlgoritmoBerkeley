@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/sistemasdistribuidos/SistemasDistribuidos.java</file>
-            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/Berkley/Reloj.java</file>
-            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/Berkley/JFrameReloj.java</file>
+            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/comunicacionAbierta/Servidor.java</file>
+            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/comunicacionAbierta/Usuario.java</file>
+            <file>file:/C:/Users/Miguel/Documents/NetBeansProjects/SistemasDistribuidos/src/comunicacionAbierta/Grupo.java</file>
         </group>
     </open-files>
 </project-private>

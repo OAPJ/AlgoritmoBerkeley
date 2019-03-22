@@ -48,10 +48,9 @@ public class Reloj extends JFrameReloj {
    }
    public void sincronizarActionPerformed(java.awt.event.ActionEvent evt){
        try{
-           this.umbral= (int)Double.parseDouble(super.umbralManager.getText());
+           this.umbral= (int)Math.abs(Double.parseDouble(super.umbralManager.getText()));
            super.adelantar(2000);
            for(JFrameReloj c: esclavos){
-               
                c.adelantar(2000);
            }
        }catch(NumberFormatException r){
