@@ -40,10 +40,12 @@ public class Coordinador extends Thread{
     public void add(){
         ProcesoT po= new ProcesoT(procesos.size()+1, procesos);
         po.setVisible(true);
+        this.procesos.get(this.procesos.size()-1).setSigNodo(po);
+        po.setAntNodo(this.procesos.get(this.procesos.size()-1));
         this.procesos.add(po);
-        this.procesos.get(0).setAntNodo(procesos.get(procesos.size()-1));
-        this.procesos.get(procesos.size()-1).setSigNodo(procesos.get(0));
-        System.out.println(procesos.get(procesos.size()-1).getId());
+        po.setSigNodo(this.procesos.get(0));
+        this.procesos.get(0).setAntNodo(po);
+        System.out.println(po);
     }
     public ArrayList<ProcesoT> getProcesos() {
         return procesos;
